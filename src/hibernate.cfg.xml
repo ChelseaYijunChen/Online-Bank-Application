@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- can not change,depends on jar file. every jar file is different --> 
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+<!--   <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/orcl</property> -->
+  <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.1.41:1521/orcl</property> 
+  <property name="hibernate.connection.username">yijun</property>
+  <property name="hibernate.connection.password">yijun</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.Oracle12cDialect</property>
+  <property name="show_sql">true</property> <!-- will display into console -->
+  <property name="hbm2ddl.auto">update</property> 
+  <property name="hibernate.enable_lazy_load_no_trans">true</property>
+  <mapping class="com.hibernate.bean.User"></mapping>
+  <mapping class="com.hibernate.bean.Account"></mapping>
+  <mapping class="com.hibernate.bean.Transaction"></mapping>
+</session-factory>
+</hibernate-configuration>
